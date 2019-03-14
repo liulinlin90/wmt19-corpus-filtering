@@ -4,6 +4,8 @@ import os
 import langid
 from nltk.tokenize import ToktokTokenizer
 import numpy as np
+import string
+import re
 
 import conf
 
@@ -60,12 +62,18 @@ def filter_length(conf):
         print('use old score file:', score_path)
         return load_score(score_path)
     toktok = ToktokTokenizer()
+    punct = {}
+    for i in string.punctuation:
+        punct[i] = 1
     for fpath in (conf.src_data, conf.tgt_data):
         index = 0
         with open(fpath, 'r') as inf:
             for line in inf:
                 line = line.strip()
-                l = len(toktok.tokenize(line))
+                line = re.sub(r'\d+', ' ', line)
+                line = set(toktok.tokenize(line))
+                line = list(filter(lambda x: x not in punct, line))
+                l = len(line)
                 if len(score) == index:
                     score.append(l)
                 else:
@@ -76,8 +84,8 @@ def filter_length(conf):
                     s2 = 1
                     if max_l - min_l > 3:
                         s1 = 1 - (max_l - min_l)/max_l
-                    if max_l > 30 or min_l < 3:
-                        s2 = min(30.0/max_l, min_l/3.0)
+                    if max_l > 50 or min_l < 5:
+                        s2 = min(50.0/(max_l + 1), min_l/8.0)
                     score[index] = min(s1, s2)
                 index += 1
     with open(score_path, 'w') as outf:

@@ -4,7 +4,8 @@ import operator
 
 from nltk.tokenize import ToktokTokenizer
 
-filepath = './data/processed/test1/en-ne/out.5000000.en'
+filepath = './data/processed/tmp/test.ne_en.en'
+#filepath = './data/processed/test1/en-ne/out.5000000.en'
 #filepath = './data/clean/data/wikipedia_en_ne_si_test_sets/wikipedia.dev.ne-en.ne'
 
 
@@ -44,5 +45,5 @@ def count_len(filepath):
 
 
 if __name__ == '__main__':
-    #count_word(filepath)
-    count_len(filepath)
+    count_word(filepath)
+    #count_len(filepath)

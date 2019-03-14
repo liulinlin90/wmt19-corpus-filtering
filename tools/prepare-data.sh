@@ -15,7 +15,7 @@ TRAIN_MAXLEN=250  # remove sentences with >250 BPE tokens
 
 ROOT='./'
 SCRIPTS=$ROOT/tools/scripts
-DATA=$ROOT/data/processed/test1
+DATA=$ROOT/data/processed/test2
 TMP=$DATA/wiki_${SRC}_${TGT}_bpe${BPESIZE}
 DATABIN=$DATA/bin/wiki_${SRC}_${TGT}_bpe${BPESIZE}
 mkdir -p $TMP $DATABIN
