@@ -2,10 +2,10 @@
 
 use strict;
 
-my $FILE_SCORE = "./data/processed/test1/score/score.langid.en-ne";
+my $FILE_SCORE = "./data/processed/test2/score/score.combine.en-ne";
+my $OUT = "./data/processed/test2/en-ne/out";
 my $FILE_F = "./data/paracrawl/paracrawl-release3.en-ne.dedup.ne";
 my $FILE_E = "./data/paracrawl/paracrawl-release3.en-ne.dedup.en";
-my $OUT = "./data/processed/test1/en-ne/out";
 
 $FILE_E =~ /\.([^\.]+)$/;
 my $ext_e = $1;

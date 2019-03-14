@@ -2,7 +2,7 @@
 
 source_lang=ne
 target_lang=en
-rootdir="./data/processed/test1/"
+rootdir="./data/processed/test2/"
 
 CUDA_VISIBLE_DEVICES=1 fairseq-train \
     ${rootdir}/bin/wiki_${source_lang}_${target_lang}_bpe5000/ \
