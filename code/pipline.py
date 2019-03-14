@@ -5,6 +5,14 @@ import langid
 
 import conf
 
+def get_score_path(conf, scoretype):
+    score_dir = conf.score_dir
+    if not os.path.isdir(score_dir):
+        os.makedirs(score_dir)
+    return os.path.join(conf.score_dir, 'score.{}.{}-{}'.format(scoretype,
+                                                                conf.src_lang,
+                                                                conf.tgt_lang))
+
 
 def filter_language(conf):
     score  = []
@@ -22,7 +30,7 @@ def filter_language(conf):
                 else:
                     score[index] = score[index] * s
                 index += 1
-    with open(os.path.join(conf.score_dir, 'score.language.{}-{}'.format(conf.src_lang, conf.tgt_lang))) as outf:
+    with open(get_score_path(conf, 'langid'), 'w') as outf:
         for s in score:
             outf.write(str(s) + '\n')
 
