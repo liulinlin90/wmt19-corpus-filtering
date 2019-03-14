@@ -1,5 +1,1 @@
-src_data = './data/paracrawl/paracrawl-release3.en-ne.dedup.en'
-tgt_data = './data/paracrawl/paracrawl-release3.en-ne.dedup.ne'
-src_lang = 'en'
-tgt_lang = 'ne'
-score_dir = './data/processed/test1/score'
+conf.ne.py
