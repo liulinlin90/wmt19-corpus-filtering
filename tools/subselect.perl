@@ -7,7 +7,7 @@ my $FILE_F = "./data/paracrawl/paracrawl-release3.en-ne.dedup.ne";
 my $FILE_E = "./data/paracrawl/paracrawl-release3.en-ne.dedup.en";
 my $OUT = "./data/processed/baseline/out";
 
-print $OUT
+print $OUT;
 
 $FILE_E =~ /\.([^\.]+)$/;
 my $ext_e = $1;
