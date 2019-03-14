@@ -1,0 +1,2 @@
+| Translated 2835 sentences (93060 tokens) in 34.7s (81.74 sentences/s, 2683.06 tokens/s)
+| Generate test with beam=5: BLEU(score=6.774657950508615, counts=[18579, 4995, 1700, 625], totals=[47725, 44890, 42059, 39229], precisions=[38.929282346778415, 11.12719982178659, 4.041941082764688, 1.59320910550868], bp=0.932193589200135, sys_len=47725, ref_len=51076)

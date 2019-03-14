@@ -4,7 +4,7 @@ import sys
 import random
 
 filepath = sys.argv[1]
-filelength= 3357018
+filelength= 2063344
 
 with open(filepath, 'w') as outf:
     for i in range(filelength):

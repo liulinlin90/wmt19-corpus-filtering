@@ -1,1 +1,1 @@
-conf.ne.py
+conf.test.py

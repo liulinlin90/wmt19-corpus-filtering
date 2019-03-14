@@ -4,7 +4,7 @@ import operator
 
 from nltk.tokenize import ToktokTokenizer
 
-filepath = './data/processed/test1/en-ne/out.5000000.en'
+filepath = './data/clean/data/wikipedia_en_ne_si_test_sets/wikipedia.dev.ne-en.ne'
 
 
 def run(filepath):
@@ -17,9 +17,9 @@ def run(filepath):
                 if t in count:
                     count[t] += 1
                 else:
-                    count[t] = 0
+                    count[t] = 1
     outfile = filepath + '.count'
-    court_sort = sorted(count.items(), key=operator.itemgetter(0), reverse=True)
+    count_sort = sorted(count.items(), key=operator.itemgetter(1), reverse=True)
     with open(outfile, 'w') as outf:
         for line in count_sort:
             outf.write(' '.join(map(str, line)) + '\n')
